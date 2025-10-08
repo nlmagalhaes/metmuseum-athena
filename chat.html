@@ -92,6 +92,12 @@
       console.error('Error loading Embedded Messaging: ', err);
     }
   }
+      // Aqui adicionamos o listener
+      window.addEventListener("onEmbeddedMessagingReady", () => {
+        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+          "Language": embeddedservice_bootstrap.settings.language
+       });
+    });
 </script>
 
 <script type="text/javascript" 
