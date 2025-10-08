@@ -1,4 +1,4 @@
-/* Reset básico */
+/* ===== RESET BÁSICO ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Para garantir que o footer fique no fim da tela */
+/* ===== ESTRUTURA BÁSICA ===== */
 html, body {
   height: 100%;
 }
@@ -17,9 +17,9 @@ body {
   min-height: 100vh;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
-  background-color: #8B0000; /* vermelho escuro elegante (Dark Red) */
+  background-color: #8B0000; /* vermelho escuro elegante */
   color: white;
   display: flex;
   justify-content: space-between;
@@ -27,25 +27,23 @@ header {
   padding: 15px 40px;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 900; /* ligeiramente menor que o chat */
 }
 
 header .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white; /* garante que o logo fique branco */
+  color: white;
 }
 
 header nav ul {
   list-style: none;
   display: flex;
   gap: 25px;
-  margin: 0;
-  padding: 0;
 }
 
 header nav ul li a {
-  color: white; /* links brancos */
+  color: white;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
@@ -55,7 +53,7 @@ header nav ul li a:hover {
   color: #FFD700; /* dourado no hover */
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
   background: url("images/hero-bg.jpg") no-repeat center center;
   background-size: cover;
@@ -73,7 +71,7 @@ header nav ul li a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .hero-text {
@@ -92,7 +90,7 @@ header nav ul li a:hover {
   line-height: 1.6;
 }
 
-/* Exposições */
+/* ===== EXPOSIÇÕES ===== */
 .exposicoes {
   padding: 60px;
   text-align: center;
@@ -110,31 +108,28 @@ header nav ul li a:hover {
   overflow: hidden;
   padding: 0px 40px; /* espaço para setas */
   box-sizing: border-box;
-
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.4s ease-in-out;
-  overflow-x: auto;           /* permite scroll horizontal */
-  scroll-behavior: smooth;    /* rolagem suave */
-  -ms-overflow-style: none;   /* remove barra de rolagem no IE e Edge */
-  scrollbar-width: none;      /* remove barra no Firefox */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE e Edge */
+  scrollbar-width: none;    /* Firefox */
 }
 
 .carousel-track::-webkit-scrollbar {
-  display: none;              /* remove barra no Chrome/Safari */
+  display: none; /* Chrome/Safari */
 }
 
-
-/* Cards */
+/* ===== CARDS ===== */
 .card {
-  flex: 0 0 calc(30% - 20px); /* 3 cards por vez */
+  flex: 0 0 calc(30% - 20px); /* 3 cards visíveis */
   margin: 0px 25px;
-  box-sizing: border-box;
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
 }
@@ -163,7 +158,7 @@ header nav ul li a:hover {
   transform: translateY(-8px);
 }
 
-/* Botões do carrossel */
+/* ===== BOTÕES DO CARROSSEL ===== */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -175,7 +170,7 @@ header nav ul li a:hover {
   cursor: pointer;
   border-radius: 50%;
   font-size: 30px;
-  z-index: 1000;
+  z-index: 10; /* 🔹 menor prioridade que o chat */
   transition: background 0.3s, transform 0.2s;
 }
 
@@ -192,12 +187,12 @@ header nav ul li a:hover {
   right: 15px;
 }
 
-/* Main container para páginas internas */
+/* ===== CONTAINER PRINCIPAL ===== */
 main.container {
   flex: 1;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
   background: #8B0000;
   color: #fff;
@@ -205,4 +200,13 @@ footer {
   padding: 20px;
   font-size: 1rem;
   margin-top: auto;
+  z-index: 1;
+  position: relative;
+}
+
+/* ===== PRIORIDADE DO CHAT ===== */
+.embeddedMessagingFrame,
+.embeddedMessagingFrame iframe {
+  z-index: 9999 !important; /* 🔹 garante que o chat fique no topo */
+  position: relative;
 }
