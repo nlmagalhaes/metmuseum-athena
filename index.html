@@ -32,71 +32,84 @@
 
   <!-- Exposições -->
   <section class="exposicoes">
-  <h2>Agora em Exibição</h2>
-  <div class="carousel-container">
-    <button class="carousel-btn prev">&#10094;</button>
-    <div class="carousel-track">
-      <div class="card">
-        <img src="images/expo1.png" alt="Exposição 1">
-        <h3>Jennie C. Jones Ensemble</h3>
-        <p class="data-expo">Até 19 de outubro</p>
+    <h2>Agora em Exibição</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn prev">&#10094;</button>
+      <div class="carousel-track">
+        <div class="card">
+          <img src="images/expo1.png" alt="Exposição 1">
+          <h3>Jennie C. Jones Ensemble</h3>
+          <p class="data-expo">Até 19 de outubro</p>
+        </div>
+        <div class="card">
+          <img src="images/expo2.png" alt="Exposição 2">
+          <h3>Superfine: Tailoring Black Style</h3>
+          <p class="data-expo">Até 26 de outubro</p>
+        </div>
+        <div class="card">
+          <img src="images/expo3.png" alt="Exposição 3">
+          <h3>Espírito da Criatividade</h3>
+          <p class="data-expo">Até 19 de outubro</p>
+        </div>
+        <div class="card">
+          <img src="images/expo4.png" alt="Exposição 4">
+          <h3>Notas de Origem</h3>
+          <p class="data-expo">Até 30 de outubro</p>
+        </div>
+        <div class="card">
+          <img src="images/expo5.png" alt="Exposição 5">
+          <h3>Alegoria e Abstração</h3>
+          <p class="data-expo">Até 12 de novembro</p>
+        </div>
+        <div class="card">
+          <img src="images/expo6.png" alt="Exposição 6">
+          <h3>Ganesha: Começos</h3>
+          <p class="data-expo">Até 20 de novembro</p>
+        </div>
       </div>
-      <div class="card">
-        <img src="images/expo2.png" alt="Exposição 2">
-        <h3>Superfine: Tailoring Black Style</h3>
-        <p class="data-expo">Até 26 de outubro</p>
-      </div>
-      <div class="card">
-        <img src="images/expo3.png" alt="Exposição 3">
-        <h3>Espírito da Criatividade</h3>
-        <p class="data-expo">Até 19 de outubro</p>
-      </div>
-      <div class="card">
-        <img src="images/expo4.png" alt="Exposição 4">
-        <h3>Notas de Origem</h3>
-        <p class="data-expo">Até 30 de outubro</p>
-      </div>
-      <div class="card">
-        <img src="images/expo5.png" alt="Exposição 5">
-        <h3>Alegoria e Abstração</h3>
-        <p class="data-expo">Até 12 de novembro</p>
-      </div>
-      <div class="card">
-        <img src="images/expo6.png" alt="Exposição 6">
-        <h3>Ganesha: Começos</h3>
-        <p class="data-expo">Até 20 de novembro</p>
-      </div>
+      <button class="carousel-btn next">&#10095;</button>
     </div>
-    <button class="carousel-btn next">&#10095;</button>
-  </div>
-</section>
+  </section>
 
   <!-- Footer -->
-      <footer>
-        <p>&copy; 2024 Match Museum. Todos os direitos reservados.</p>
-        <!-- Aqui você já tem o código do Agentforce -->
-        <script type='text/javascript'>
-            function initEmbeddedMessaging() {
-                try {
-                    embeddedservice_bootstrap.settings.language = 'en_US';
-                    embeddedservice_bootstrap.init(
-                        '00DKY00000NRyu9',
-                        'backup_athena',
-                        'https://trailsignup-0947c9037edb1f.my.site.com/ESWbackupathena1759436415781',
-                        {
-                            scrt2URL: 'https://trailsignup-0947c9037edb1f.my.salesforce-scrt.com'
-                        }
-                    );
-                } catch (err) {
-                    console.error('Error loading Embedded Messaging: ', err);
-                }
-            };
-        </script>
-        <script type='text/javascript' src='https://trailsignup-0947c9037edb1f.my.site.com/ESWbackupathena1759436415781/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Met Museum. Todos os direitos reservados.</p>
 
-    <!-- Script do carrossel -->
-    <script src="carousel.js"></script>
+    <!-- Código do Agentforce -->
+    <script type="text/javascript">
+      function initEmbeddedMessaging() {
+        try {
+          embeddedservice_bootstrap.settings.language = 'en_US';
+          embeddedservice_bootstrap.init(
+            '00DKY00000NRyu9',
+            'backup_athena',
+            'https://trailsignup-0947c9037edb1f.my.site.com/ESWbackupathena1759436415781',
+            {
+              scrt2URL: 'https://trailsignup-0947c9037edb1f.my.salesforce-scrt.com'
+            }
+          );
+        } catch (err) {
+          console.error('Error loading Embedded Messaging: ', err);
+        }
+      }
+
+      // 🔹 Adicionando o listener para definir o campo oculto "Language"
+      window.addEventListener("onEmbeddedMessagingReady", () => {
+        console.log("✅ Embedded Messaging pronto — configurando campo 'Language'.");
+        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+          "Language": embeddedservice_bootstrap.settings.language
+        });
+      });
+    </script>
+
+    <script 
+      type="text/javascript"
+      src="https://trailsignup-0947c9037edb1f.my.site.com/ESWbackupathena1759436415781/assets/js/bootstrap.min.js"
+      onload="initEmbeddedMessaging()">
+    </script>
+  </footer>
+
+  <!-- Script do carrossel -->
+  <script src="carousel.js"></script>
 </body>
 </html>
-
